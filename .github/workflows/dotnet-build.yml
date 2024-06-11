@@ -6,18 +6,17 @@ on:
 
 jobs:
   lint:
-    name: Lint code base
+    name: code base
     runs-on: ubuntu-latest
     steps: 
       - name: Print msg
         run : echo "Hello world!"
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          # super-linter needs the full git history to get the
-          # list of files that changed across commits
-          fetch-depth: 0
       - name: Print msg with event name
         run : echo "The job was triggered by a ${{github.event_name}} event." 
       - name: Run Bash script
-        run:  bash bash.sh
+        shell: bash
+        run: |
+             bash.sh
+        
