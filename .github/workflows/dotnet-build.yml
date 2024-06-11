@@ -19,7 +19,7 @@ jobs:
         shell: bash
         run: |
              dir=$(pwd) | 
-             echo $dir |
+             echo "dir = $dir" |
              count=$(ls -1 $dir | wc -l) | 
              echo "O diretório contém $count arquivos."
         
