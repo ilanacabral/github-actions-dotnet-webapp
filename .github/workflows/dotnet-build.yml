@@ -1,0 +1,21 @@
+name: events-workflow
+on:
+  push:   
+  schedule:
+    - cron : '0 * * * *'
+
+jobs:
+  lint:
+    name: Lint code base
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Print msg
+        run : echo "Hello world!"
+      - name: Checkout code
+        uses : actions/checkout@2
+      - name: Verify code
+        uses : github/super-linter@v3
+      - name: Print msg with event name
+        run : echo "The job was triggered by a ${{github.event_name}} event." 
+      - name: Run Bash script
+        run: bash bash.sh
