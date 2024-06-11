@@ -18,8 +18,8 @@ jobs:
       - name: Run Bash script       
         shell: bash
         run: |
-             dir=$(pwd) | 
-             echo "dir = $dir" |
-             count=$(ls -1 $dir | wc -l) | 
+             dir=$(pwd)  
+             echo "dir = $dir" 
+             count=$(ls -1 $dir | wc -l) 
              echo "O diretório contém $count arquivos."
         
