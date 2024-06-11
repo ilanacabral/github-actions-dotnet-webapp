@@ -15,8 +15,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Print msg with event name
         run : echo "The job was triggered by a ${{github.event_name}} event." 
-      - name: Run Bash script
+      - name: Run Bash script      
         shell: bash
         run: |
-             nano test
+             count=$(ls -1 . | wc -l)
         
