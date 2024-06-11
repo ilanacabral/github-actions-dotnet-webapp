@@ -5,7 +5,7 @@ on:
     - cron : '0 * * * *'
 
 jobs:
-  lint:
+  code_base:
     name: code base
     runs-on: ubuntu-latest
     steps: 
@@ -15,8 +15,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Print msg with event name
         run : echo "The job was triggered by a ${{github.event_name}} event." 
-      - name: Run Bash script      
+      - name: Run Bash script       
         shell: bash
         run: |
-             count=$(ls -1 . | wc -l)
+             count=$(ls -1 . | wc -l) | 
+             echo "O diretório contém $count arquivos."
         
